@@ -1,50 +1,48 @@
-# All unpinned blobs below are extracted from V14.0.4.0.SJWMIXM (CURTANAGlobal)
+# All blobs below are extracted from HyperOS OS1.0.17.0.UKWMIXM (agate/AGATEGlobal, Android 14)
+# Xiaomi 11T (agate) / MT6893
 
-# Dependencies
-vendor/lib64/libmpbase.so:system/lib64/libmpbase.so;MODULE_SUFFIX=_system
-vendor/lib64/libOpenCL.so:system/lib64/libOpenCL.so;MODULE_SUFFIX=_system
-vendor/lib64/libarcsoft_dualcam_refocus.so:system/lib64/libarcsoft_dualcam_refocus.so;MODULE_SUFFIX=_system
-vendor/lib64/libarcsoft_dualcam_refocus_front.so:system/lib64/libarcsoft_dualcam_refocus_front.so;MODULE_SUFFIX=_system
-vendor/lib64/libarcsoft_dualcam_refocus_rear_t.so:system/lib64/libarcsoft_dualcam_refocus_rear_t.so;MODULE_SUFFIX=_system
-vendor/lib64/libarcsoft_dualcam_refocus_rear_w.so:system/lib64/libarcsoft_dualcam_refocus_rear_w.so;MODULE_SUFFIX=_system
-vendor/lib64/libarcsoft_portrait_lighting.so:system/lib64/libarcsoft_portrait_lighting.so;MODULE_SUFFIX=_system
-vendor/lib64/libarcsoft_portrait_lighting_c.so:system/lib64/libarcsoft_portrait_lighting_c.so;MODULE_SUFFIX=_system
+# MiuiCamera
+product/priv-app/MiuiCamera/MiuiCamera.apk
 
-# MiSys
+# ExtraPhoto (photo editor / relight / document)
+product/priv-app/ExtraPhotoGlobal/ExtraPhotoGlobal.apk
+
+# System_ext camera JNI libraries (patched with libgui_shim_miuicamera)
+system_ext/lib64/libcamera_algoup_jni.xiaomi.so
+system_ext/lib64/libcamera_mianode_jni.xiaomi.so
+system_ext/lib64/libcamera_ispinterface_jni.xiaomi.so
+system_ext/lib64/libopencl-camera.so
+
+# MiSys JNI bridge + HIDL client stubs (system)
+system/lib64/libmisys_jni.xiaomi.so
+system/lib64/vendor.xiaomi.hardware.misys@1.0.so;MODULE_SUFFIX=_system
+system/lib64/vendor.xiaomi.hardware.misys@2.0.so;MODULE_SUFFIX=_system
+system/lib64/vendor.xiaomi.hardware.misys@3.0.so;MODULE_SUFFIX=_system
+system/lib64/vendor.xiaomi.hardware.misys@4.0.so;MODULE_SUFFIX=_system
+
+# Public libraries
+system/etc/public.libraries-xiaomi.txt
+
+# MiSys HAL (vendor)
 vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
+vendor/bin/hw/vendor.xiaomi.hardware.misys@4.0-service
 vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@1.0.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@2.0.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@3.0.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@4.0.xml
 vendor/lib64/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
 vendor/lib64/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
 vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
-vendor/lib64/libcheckpid.so
-vendor/lib64/liblogwrap_vendor.so
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@4.0-impl.so
 vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
 vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
-
-# MiuiCamera
-system/lib64/libcamera_algoup_jni.xiaomi.so;SYMLINK=system/priv-app/MiuiCamera/lib/arm64/libcamera_algoup_jni.xiaomi.so
-system/lib64/libcamera_mianode_jni.xiaomi.so;SYMLINK=system/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so
-system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,GoogleCamera,GoogleCameraGo
-
-# MiuiExtraPhoto
-system/lib64/libdoc_photo.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so;FIX_SONAME
-system/lib64/libdoc_photo_c++_shared.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so;FIX_SONAME
-system/lib64/libgallery_arcsoft_dualcam_refocus.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so;FIX_SONAME
-system/lib64/libgallery_arcsoft_portrait_lighting.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting.so;FIX_SONAME
-system/lib64/libgallery_arcsoft_portrait_lighting_c.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting_c.so;FIX_SONAME
-system/lib64/libgallery_mpbase.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_mpbase.so;FIX_SONAME
-system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
-system/lib64/librefocus.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so;DISABLE_DEPS
-system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
-system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
-
-# Public Libararies
-system/etc/public.libraries-xiaomi.txt
+vendor/lib64/vendor.xiaomi.hardware.misys@4.0.so
+vendor/lib64/libcheckpid.so
+vendor/lib64/liblogwrap_vendor.so

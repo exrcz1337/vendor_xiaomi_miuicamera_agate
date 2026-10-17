@@ -7,6 +7,8 @@ type miuicamera_app, domain, coredomain;
 app_domain(miuicamera_app)
 net_domain(miuicamera_app)
 
+hal_client_domain(miuicamera_app, hal_misys)
+
 allow miuicamera_app {
     app_api_service
     audioserver_service

@@ -18,7 +18,6 @@ ANDROID_ROOT="${MY_DIR}/../../.."
 
 # Define the default patchelf version used to patch blobs
 # This will also be used for utility functions like FIX_SONAME
-# Older versions break some camera blobs for us
 export PATCHELF_VERSION=0_18
 
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
@@ -59,18 +58,15 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        system/lib64/libcamera_mianode_jni.xiaomi.so)
+        system_ext/lib64/libcamera_algoup_jni.xiaomi.so | \
+            system_ext/lib64/libcamera_mianode_jni.xiaomi.so | \
+            system_ext/lib64/libcamera_ispinterface_jni.xiaomi.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libgui_shim_miuicamera.so" "${2}"
             ;;
-        system/lib64/libcamera_algoup_jni.xiaomi.so)
+        product/priv-app/MiuiCamera/MiuiCamera.apk | \
+            product/priv-app/ExtraPhotoGlobal/ExtraPhotoGlobal.apk)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --add-needed "libgui_shim_miuicamera.so" "${2}"
-            sed -i "s/\x08\xad\x40\xf9/\x08\xa9\x40\xf9/" "${2}"
-            ;;
-        system/priv-app/MiuiCamera/MiuiCamera.apk)
-            [ "$2" = "" ] && return 0
-            apktool_patch "${2}" "$MY_DIR/patches"
             split --bytes=49M -d "$2" "$2".part
             ;;
         *)
@@ -84,11 +80,6 @@ function blob_fixup() {
 function blob_fixup_dry() {
     blob_fixup "$1" ""
 }
-
-if [ -z "$SRC" ]; then
-    echo "Path to system dump not specified! Specify one with --path"
-    exit 1
-fi
 
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
