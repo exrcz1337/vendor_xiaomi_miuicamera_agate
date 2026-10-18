@@ -15,7 +15,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Priv-app permission
 PRODUCT_COPY_FILES += \
-    $(MIUICAMERA_PATH)/configs/privapp-permissions-miui.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miui.xml
+    $(MIUICAMERA_PATH)/configs/privapp-permissions-miui.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-miui.xml
 
 # Shims
 PRODUCT_PACKAGES += \
@@ -23,4 +23,4 @@ PRODUCT_PACKAGES += \
 
 # Sysconfig
 PRODUCT_COPY_FILES += \
-    $(MIUICAMERA_PATH)/configs/miuicamera-hiddenapi-package-allowlist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/miuicamera-hiddenapi-package-allowlist.xml
+    $(MIUICAMERA_PATH)/configs/miuicamera-hiddenapi-package-allowlist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/miuicamera-hiddenapi-package-allowlist.xml
