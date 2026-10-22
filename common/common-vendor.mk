@@ -7,6 +7,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/miuicamera/common/proprietary/system/etc/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-xiaomi.txt \
+    vendor/xiaomi/miuicamera/common/proprietary/system/etc/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_PRODUCT)/etc/public.libraries-xiaomi.txt \
+    vendor/xiaomi/miuicamera/common/proprietary/system/etc/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-xiaomi.txt \
     vendor/xiaomi/miuicamera/common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc \
     vendor/xiaomi/miuicamera/common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc \
     vendor/xiaomi/miuicamera/common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc \
@@ -16,6 +18,7 @@ PRODUCT_PACKAGES += \
     libcamera_algoup_jni.xiaomi \
     libcamera_mianode_jni.xiaomi \
     libcamera_ispinterface_jni.xiaomi \
+    vendor.mediatek.hardware.camera.isphal-V1-ndk \
     libopencl-camera \
     libmisys_jni.xiaomi \
     vendor.xiaomi.hardware.misys@1.0_system \

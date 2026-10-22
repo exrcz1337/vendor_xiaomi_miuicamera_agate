@@ -66,6 +66,23 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "vendor.mediatek.hardware.camera.isphal-V1-ndk",
+	owner: "xiaomi/miuicamera",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so"],
+		},
+	},
+	compile_multilib: "64",
+	system_ext_specific: true,
+	check_elf_files: false,
+	prefer: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libopencl-camera",
 	owner: "xiaomi/miuicamera",
 	strip: {
