@@ -15,6 +15,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/miuicamera/common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc \
 
 PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.camera.isphal@1.0_system \
+    libmtkisp_metadata_system \
     libcamera_algoup_jni.xiaomi \
     libcamera_mianode_jni.xiaomi \
     libcamera_ispinterface_jni.xiaomi \

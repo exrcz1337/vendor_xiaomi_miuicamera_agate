@@ -2,3 +2,5 @@ libmisys_jni.xiaomi.so
 libcamera_algoup_jni.xiaomi.so
 libcamera_mianode_jni.xiaomi.so
 libcamera_ispinterface_jni.xiaomi.so
+vendor.mediatek.hardware.camera.isphal@1.0.so
+libmtkisp_metadata.so
