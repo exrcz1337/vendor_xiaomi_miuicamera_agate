@@ -7,5 +7,4 @@
 cc_library {
     name: "libgui_shim_miuicamera",
     srcs: ["libgui_shim_miuicamera.c"],
-    product_specific: true,
 }
