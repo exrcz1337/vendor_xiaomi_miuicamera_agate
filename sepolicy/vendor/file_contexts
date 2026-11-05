@@ -3,3 +3,6 @@
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.misys@2\.0-service          u:object_r:hal_misys_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.misys@3\.0-service          u:object_r:hal_misys_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.misys@4\.0-service          u:object_r:hal_misys_default_exec:s0
+
+# Dependencies loaded by the in-process MiAlgo plugins.
+/(vendor|system/vendor)/lib64/lib(SuperSensor|alCFR|alhLDC|beauty_face_interface|c\+\+_shared|miai_deblur|mialgo_utils|mibokeh_mt6873|mpbase|sdk_sr|wa_refocus)\.so u:object_r:same_process_hal_file:s0
