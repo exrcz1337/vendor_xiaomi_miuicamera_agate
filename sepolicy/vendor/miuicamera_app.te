@@ -28,9 +28,6 @@ allow miuicamera_app vendor_camera_data_file:file { getattr open read };
 
 # Properties
 get_prop(miuicamera_app, vendor_fingerprint_prop)
-r_dir_file(miuicamera_app, vendor_file)
 r_dir_file(miuicamera_app, vendor_configs_file)
 allow miuicamera_app same_process_hal_file:file { execute read open getattr map };
-allow miuicamera_app vendor_file:file { execute read open getattr map };
 get_prop(miuicamera_app, vendor_mtk_camera_prop)
-get_prop(miuicamera_app, vendor_default_prop)
