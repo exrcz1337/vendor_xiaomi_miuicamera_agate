@@ -24,3 +24,6 @@ PRODUCT_PACKAGES += \
 # Sysconfig
 PRODUCT_COPY_FILES += \
     $(MIUICAMERA_PATH)/configs/miuicamera-hiddenapi-package-allowlist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/miuicamera-hiddenapi-package-allowlist.xml
+
+PRODUCT_COPY_FILES += \
+    $(MIUICAMERA_PATH)/configs/camera/superlowlightsnapshot.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/xiaomi/superlowlightsnapshot.json
