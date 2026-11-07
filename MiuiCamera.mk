@@ -20,7 +20,6 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libgui_shim_miuicamera \
-    libutilscallstack_vendor
 
 # Sysconfig
 PRODUCT_COPY_FILES += \
