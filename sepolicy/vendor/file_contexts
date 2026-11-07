@@ -8,3 +8,5 @@
 /(vendor|system/vendor)/lib64/lib(SuperSensor|alCFR|alhLDC|beauty_face_interface|c\+\+_shared|miai_deblur|mialgo_utils|mibokeh_mt6873|mpbase|sdk_sr|wa_refocus)\.so u:object_r:same_process_hal_file:s0
 
 /(vendor|system/vendor)/lib64/lib(SuperSensorCPU|SuperSensorProcessor|_sr_models|anc_dc_base|apusys|miai_portraitsupernight|mialgo_ie_capture|relight_only|wa_depth|wa_opticalzoom_fusion|xmi_high_dynamic_range)\.so u:object_r:same_process_hal_file:s0
+
+/(vendor|system/vendor)/lib(64)?/lib(neuron_.*|vpu|ion_mtk|apu_mdw.*|apusys_edma|arcsoft_sn_mtk_apu)\.so u:object_r:same_process_hal_file:s0
