@@ -31,3 +31,12 @@ get_prop(miuicamera_app, vendor_fingerprint_prop)
 r_dir_file(miuicamera_app, vendor_configs_file)
 allow miuicamera_app same_process_hal_file:file { execute read open getattr map };
 get_prop(miuicamera_app, vendor_mtk_camera_prop)
+
+# APU (NPU) access - camera AI engine (MACE/apusys) opens /dev/apusys directly.
+# Without this: apusysSession_createInstance errno 13 -> APUSysEngine::createInstance()
+# failed -> ParallelDataZip SIGSEGV (fault addr 0xe0/0x31).
+allow miuicamera_app apusys_device:chr_file rw_file_perms;
+allow miuicamera_app apusys_device:chr_file ioctl;
+
+# bokeh kernel files dumped under /data/vendor/camera_dump
+r_dir_file(miuicamera_app, vendor_camera_dump_file)
