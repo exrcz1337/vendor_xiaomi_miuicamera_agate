@@ -41,5 +41,4 @@ allow miuicamera_app apusys_device:chr_file ioctl;
 # bokeh kernel files dumped under /data/vendor/camera_dump
 r_dir_file(miuicamera_app, vendor_camera_dump_file)
 allow miuicamera_app ion_device:chr_file rw_file_perms;
-allow miuicamera_app dmabuf_heap_device:chr_file rw_file_perms;
 allow miuicamera_app vendor_camera_dump_file:file { create write getattr open read };
